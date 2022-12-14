@@ -49,6 +49,7 @@ NOTE: Si vous restaurez une application qui a été supprimée, choisissez un no
 . *Résumé de restauration* : consultez les détails de l'action de restauration et cliquez sur *Restaurer*.
 
 
+.Résultat
 Astra Control Center restaure l'application en fonction des informations que vous avez fournies.
 
 

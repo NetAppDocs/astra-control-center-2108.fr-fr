@@ -15,26 +15,26 @@ Les problèmes connus identifient les problèmes susceptibles de vous empêcher 
 
 Les problèmes connus suivants ont une incidence sur la version actuelle :
 
-*  ClusterRoleBinding created by Astra Control Center CRD during installation
-*  with user-defined label goes into "removed" state
-*  to stop running app backup
-*  or clone fails for apps using PVCs with decimal units in Astra Control Center
-*  Control Center UI slow to show changes to app resources such as persistent volume changes
-*  app restore from backup Trident creates a larger PV than the original PV
-*  performance impacted by large persistent volumes
-*  clones fail using a specific version of PostgreSQL
-*  clones fail when using Service Account level OCP Security Context Constraints (SCC)
-*  buckets in Astra Control Center do not report available capacity
-*  buckets between instances of Astra Control Center causes failures
-*  a bucket provider type with credentials for another type causes data protection failures
-*  and snapshots might not be retained during removal of an Astra Control Center instance
-*  backups are retained as part of scheduled backup
+* <<ClusterRoleBinding incorrect créé par le CRD Astra Control Center lors de l'installation>>
+* <<L'application avec étiquette définie par l'utilisateur passe à l'état « supprimé »>>
+* <<Impossible d'arrêter la sauvegarde de l'application en cours d'exécution>>
+* <<La sauvegarde ou le clonage échoue pour les applications utilisant des ESV avec des unités décimales dans Astra Control Center>>
+* <<L'interface utilisateur d'Astra Control Center est lente à afficher les modifications apportées aux ressources d'application, telles que les changements de volume persistant>>
+* <<Lors de la restauration d'applications à partir de la sauvegarde, Trident crée un volume persistant plus important que le volume persistant d'origine>>
+* <<Performances de clones affectées par de grands volumes persistants>>
+* <<Les clones d'applications échouent à l'aide d'une version spécifique de PostgreSQL>>
+* <<Les clones d'application échouent lors de l'utilisation des contraintes de contexte de sécurité OCP au niveau du compte de service (SCC)>>
+* <<Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible>>
+* <<La réutilisation de compartiments entre des instances d'Astra Control Center provoque des défaillances>>
+* <<La sélection d'un type de compartiment avec des identifiants d'un autre type entraîne des défaillances de protection des données>>
+* <<Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center>>
+* <<Les sauvegardes supplémentaires sont conservées dans le cadre d'une sauvegarde planifiée>>
 * link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default["L'opération de clonage ne peut pas utiliser d'autres compartiments par défaut"]
-*  a cluster with Astra Control Center fails when default kubeconfig file contains more than one context
+* <<La gestion d'un cluster avec Astra Control Center échoue lorsque le fichier kubeconfig par défaut contient plusieurs contextes>>
 * link:known-issues.html#cant-determine-asup-tar-bundle-status-in-scaled-environment["Impossible de déterminer l'état du bundle tar ASUP dans l'environnement mis à l'échelle"]
-*  of Astra Control Center fails to clean up the monitoring-operator pod on the managed cluster
-*  of Astra Control Center fails to clean up Traefik CRDs
-*  collection stuck in a generating or uploading state
+* <<La désinstallation d'Astra Control Center ne parvient pas à nettoyer le module de l'opérateur de surveillance sur le cluster géré>>
+* <<La désinstallation d'Astra Control Center ne parvient pas à nettoyer les CRD Traefik>>
+* <<Collecte ASUP bloquée en état de génération ou de chargement>>
 
 
 
@@ -161,7 +161,7 @@ Parfois, une ou plusieurs sauvegardes dans Astra Control Center sont conservées
 
 
 
-== L'opération de clonage ne peut pas utiliser d'autres compartiments en plus de la valeur par défaut
+== L'opération de clonage ne peut pas utiliser d'autres compartiments par défaut
 
 Lors d'une sauvegarde ou d'une restauration d'application, vous pouvez éventuellement spécifier un ID de compartiment. Cependant, une opération de clonage d'application utilise toujours le compartiment par défaut défini. Il n'existe aucune option pour modifier les compartiments d'un clone. Si vous souhaitez contrôler le godet utilisé, vous pouvez l'un des deux link:../use/manage-buckets.html#edit-a-bucket["modifiez les paramètres par défaut du compartiment"] ou faites un link:../use/protect-apps.html#create-a-backup["sauvegarde"] suivi d'un link:../use/restore-apps.html["restaurer"] séparément.
 
