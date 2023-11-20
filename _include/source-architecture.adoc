@@ -35,7 +35,7 @@ Astra Control Center vous permet également de gérer, de migrer et de protéger
 
 == Pour en savoir plus
 
-* https://docs.netapp.com/us-en/astra/index.html["Documentation relative au service après-vente Astra Control"^]
+* https://docs.netapp.com/us-en/astra-control-service/index.html["Documentation relative au service après-vente Astra Control"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentation Astra Control"^]
 * https://docs.netapp.com/us-en/trident/index.html["Documentation Astra Trident"^]
 * https://docs.netapp.com/us-en/astra-automation-2108/index.html["Utilisez l'API Astra"^]
